@@ -1,11 +1,4 @@
 <?php
-if($_SERVER['DOCUMENT_ROOT'] == "/var/www/"){
-	require_once('includes/lightopenid/openid.php');
-}
-else{
-	require_once($_SERVER['DOCUMENT_ROOT'] . '/includes/lightopenid/openid.php');
-}
-	
 
 /**
  * Step 1: Require the Slim Framework
