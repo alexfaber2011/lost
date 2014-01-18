@@ -1,5 +1,4 @@
 <?php
-echo "hello";
 /**
  * Step 1: Require the Slim Framework
  *
@@ -11,7 +10,6 @@ echo "hello";
 require 'Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
-echo "slim loaded";
 
 /**
  * Step 2: Instantiate a Slim application
@@ -52,7 +50,6 @@ function getMongoClient() {
     }
     throw new Exception("I've tried several times getting MongoClient.. Is mongod really running?");
 }
-echo "finished getting mongo client";
 
 //Connect to Mongo database
 $connection = getMongoClient();
@@ -61,7 +58,6 @@ $db = $connection->LF;
 
 // GET route
 $app->get('/', function() use ($app, $db){
-	echo "get";
 	$header = "<h1>Welcome</h1>";
 	$output = "Hello, welcome to lost and found.  Refer to the left panel to begin.";
 	$app->render('main.php', array('header' => $header, 'output' => $output));
