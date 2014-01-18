@@ -11,6 +11,7 @@ echo "hello";
 require 'Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
+echo "slim loaded";
 
 /**
  * Step 2: Instantiate a Slim application
@@ -51,6 +52,7 @@ function getMongoClient() {
     }
     throw new Exception("I've tried several times getting MongoClient.. Is mongod really running?");
 }
+echo "finished getting mongo client";
 
 //Connect to Mongo database
 $connection = getMongoClient();
