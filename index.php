@@ -42,7 +42,7 @@ $app = new \Slim\Slim(array(
 $retry = 3;
 function getMongoClient() {
     try {
-        return new MongoClient("mongodb://alexfaber:lost@linus.mongohq.com:10089/LF");
+        return new Mongo("mongodb://alexfaber:lost@linus.mongohq.com:10089/LF");
     } catch(Exception $e) {
         /* Log the exception so we can look into why mongod failed later */
         //logException($e);
@@ -61,7 +61,7 @@ $db = $connection->LF;
 
 // GET route
 $app->get('/', function() use ($app, $db){
-	echo "get";
+	echo "get"
 	$header = "<h1>Welcome</h1>";
 	$output = "Hello, welcome to lost and found.  Refer to the left panel to begin.";
 	$app->render('main.php', array('header' => $header, 'output' => $output));
