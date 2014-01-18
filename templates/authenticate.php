@@ -26,6 +26,10 @@
 		else{
 			if($openid->validate()){
 				$returnVariables = $openid->getAttributes();
+				// Date in the past
+				header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+				header("Cache-Control: no-cache");
+				header("Pragma: no-cache");
 				header("Location: login/" . $returnVariables['contact/email'] . "/" . $returnVariables['namePerson/last'] . "/" . $returnVariables['namePerson/first']);
 				exit();
 			}
