@@ -76,6 +76,13 @@ h1{
   text-align: center;
 }
 
+h2{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
 #left-panel{
   position: relative;
   float: left;
@@ -123,11 +130,13 @@ h1{
   position: relative;
   width: 100%;
   min-height: 500px;
+  overflow: hidden;
   
   .padding{
-    min-height: 500px;
+    position: relative;
     background-color: $main-color;
     margin-left: 5px;
+    overflow: hidden;
   }
 }
 
@@ -177,4 +186,39 @@ h1{
   #sign-up{
     top: 70%;
   }
+}
+
+.item-container{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.item{
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: relative;
+  width: 300px;
+  float: left;
+  min-height: 100px;
+  
+  .padding{
+    min-height: 100px;
+  }
+  
+  h1{
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  p{
+    font-size: .8em;
+  }
+  // span.tag{
+    // padding: 5px;
+    // border-radius: 5px;
+    // background-color: white;
+  // }
 }

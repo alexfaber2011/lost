@@ -2,7 +2,7 @@
 
 			<div id="content">
 				<div class="padding">
-					<h1>Welcome</h1>
+					<h1><?php echo $header ?></h1>
 					<p><?php echo $output ?></p>
 				</div>
 			</div>

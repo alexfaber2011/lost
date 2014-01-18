@@ -9,10 +9,10 @@
 	</head>
 	<body>
 		<div id="left-panel">
-				<div class="menu-item">Name</div>
+				<div class="menu-item"><?php if(isset($name)){echo $name;}else{echo "NAME";} ?></div>
 				<a href="report-found"><div class="menu-item">Report Found</div></a>
 				<a href="report-lost"><div class="menu-item">Report Lost</div></a>
-				<div class="menu-item">My Items</div>
+				<a href="my-items"><div class="menu-item">My Items</div></a>
 				<div class="menu-item">Matches</div>
 		</div>
 		<div id="right">
