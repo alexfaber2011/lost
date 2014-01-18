@@ -3,7 +3,7 @@ if($_SERVER['DOCUMENT_ROOT'] == "/var/www/"){
 	require_once('includes/lightopenid/openid.php');
 }
 else{
-	require_once('app/var/www/includes/lightopenid/openid.php');
+	require_once('/includes/lightopenid/openid.php');
 }
 	
 
