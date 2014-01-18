@@ -11,9 +11,11 @@
 		<div id="login-box">
 			<div class="padding">
 				<h1>LOST &amp; FOUND</h1>
-				<a href="authenticate"><div class="login-button">LOGIN</div></a>
-				<a href="sign-up"><div id="sign-up" class="login-button">SIGN-UP</div></a>
-				<div 
+				<form action="login" method="get">
+					<input type="hidden" name="request" value="login" />
+					<input class="login-button" type="submit" value="login / sign-up" />
+				</form>
+				<p><?php echo $output ?></p>
 			</div>
 		</div>
 	</body>

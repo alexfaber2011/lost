@@ -1,4 +1,6 @@
 <?php
+require_once 'includes/lightopenid/openid.php';
+
 /**
  * Step 1: Require the Slim Framework
  *
@@ -74,6 +76,7 @@ $app->get('/report-found', function () use ($app){
 
 $app->post('/report', function () use ($app, $db){
 	$can_update = false;
+	
 	function trigger_kyle(){
 		$curl = curl_init();
 		// Set some options - we are passing in a useragent too here
@@ -88,7 +91,7 @@ $app->post('/report', function () use ($app, $db){
 		));
 		// Send the request & save response to $resp
 		$resp = curl_exec($curl);
-		//echo $resp;
+		
 		// Close request to clear up some resources
 		curl_close($curl);
 	}
@@ -144,7 +147,36 @@ $app->post('/report', function () use ($app, $db){
 });
 
 $app->get('/login', function() use($app){
-	$app->render('login.php');
+	
+	$request = $app->request()->get('request');
+	if($request == null){
+		$app->render('login.php');
+	}
+	elseif($request == "login"){
+		$_GET['login'] = true;
+		$app->render('authenticate.php', array('$_GET["login"]' => $_GET["login"]));
+	}
+});
+
+$app->get('/login/:email/:last_name/:first_name', function($email, $last_name, $first_name) use($app, $db){
+	//Check to see if email already exists in database, if it does. Log them in.
+	$query = array('email' => $email, 'last' => $last_name, 'first' => $first_name);
+	$user = $db->users->findOne($query);
+	if($user == null){
+		//Insert into datatabse
+		$db->users->insert($query);
+		$user = $db->users->findOne($query);
+	}
+	
+	session_cache_limiter(false);
+	session_start();
+	$_SESSION['first-name'] = $user['first'];
+	$_SESSION['first-last'] = $user['last'];
+	$_SESSION['email'] = $user['email'];
+	
+	
+	$output = "Welcome, " . $user['first'] . ".  What have you lost or found?";
+	$app->render('main.php', array('output' => $output));
 });
 
 $app->get('/my-items', function() use($app, $db){
