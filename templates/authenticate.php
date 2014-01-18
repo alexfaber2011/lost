@@ -1,5 +1,5 @@
 <?php
-	require_once('lightopenid/openid.php');
+	require_once('includes/lightopenid/openid.php');
 	
 	$documentRoot = $_SERVER['DOCUMENT_ROOT'];
 	//Connect to the database
