@@ -128,3 +128,42 @@ h1 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003134}}
 .padding {
   padding: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003138}}
+#login-box {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  margin-top: -200px;
+  margin-left: -300px;
+  border: 1px solid rgba(201, 201, 201, 0.9);
+  color: rgba(201, 201, 201, 0.9);
+  background-color: rgba(59, 64, 83, 0.5); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003150}}
+  #login-box .padding {
+    padding: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003154}}
+  #login-box h1 {
+    font-size: 3em;
+    font-weight: 100;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003160}}
+  #login-box .login-button {
+    width: 300px;
+    background: none;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    position: absolute;
+    color: rgba(201, 201, 201, 0.9);
+    left: 50%;
+    margin-left: -160px;
+    top: 50%;
+    padding: 10px;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003172}}
+    #login-box .login-button:hover {
+      background-color: rgba(201, 201, 201, 0.5); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003177}}
+  #login-box #sign-up {
+    top: 70%; }

@@ -134,3 +134,47 @@ h1{
 .padding{
   padding: 20px;
 }
+
+#login-box{
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  margin-top: -200px;
+  margin-left: -300px;
+  border: 1px solid $main-color;
+  color: $main-color;
+  background-color: rgba(59,64,83,.5);
+  
+  .padding{
+    padding: 50px;
+  }
+  
+  h1{
+    font-size: 3em;
+    font-weight: 100;
+    text-align: center;
+  }
+  
+  .login-button{
+    width: 300px;
+    background: none;
+    border: 1px solid $main-color;
+    position: absolute;
+    color: $main-color;
+    left: 50%;
+    margin-left: -160px;
+    top: 50%;
+    padding: 10px;
+    text-align: center;
+    
+    &:hover{
+      background-color: $menu-color;
+    }
+  }
+  
+  #sign-up{
+    top: 70%;
+  }
+}

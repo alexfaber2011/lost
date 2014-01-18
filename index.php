@@ -36,12 +36,12 @@ $app = new \Slim\Slim(array(
  * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
  * is an anonymous function.
  */
-require_once('includes/mongo.php');
- 
+
 //Connect to Mongo database
 $connection = new MongoClient("mongodb://alexfaber:lost@linus.mongohq.com:10089/LF");
 $db = $connection->LF;
 
+ 
 
 // GET route
 $app->get('/', function() use ($app, $db){
@@ -51,8 +51,65 @@ $app->get('/', function() use ($app, $db){
 	$app->render('main.php', array('embed' => $embed, 'cursor' => $cursor));
 });
 
-$app->get('/report-lost', function() use ($app){
+$app->get('/report-lost', function () use ($app){
+	$app->render('insert.php');
+});
+
+$app->get('/report-found', function () use ($app){
+	$app->render('insert.php', array('output' => "Found"));
+});
+
+$app->post('/report', function () use ($app, $db){
+	$can_update = false;
+	if(filter_has_var(INPUT_POST, "name") && $_POST["name"] != ""){
+		$name = $_POST["name"];
+		
+		if(filter_has_var(INPUT_POST, "item") && $_POST["item"] != ""){
+			$item = $_POST["item"];
+				
+				if(filter_has_var(INPUT_POST, "description") && $_POST["description"] != ""){
+					$description = $_POST["description"];
+					
+					if(filter_has_var(INPUT_POST, "tags") && $_POST["tags"] != ""){
+						$tags = $_POST["tags"];
+						$tags = explode(',' , $tags);
+						
+						if(filter_has_var(INPUT_POST, "location_found") && $_POST["location_found"] != ""){
+							$location = $_POST["location_found"];
+							$isFound = true;
+							$can_update = true;
+						}
+						elseif(filter_has_var(INPUT_POST, "location") && $_POST["location"] != ""){
+							$location = $_POST["location"];
+							$isFound = false;
+							$can_update = true;
+						}
+					}
+				}
+		}
+	}
+	if($can_update){
+		$date = date('M d Y');
+		if($isFound){
+			$document = array("Date Created" => $date, "Item" => $item , "Found_Location" =>  $location, "User" => $name, "Matched" => 0, "Tags" => $tags, "Description" => $description, "Match_id" => "");
+			$db->Found->insert($document);
+		}
+		else{
+			$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "User" => $name, "Matched" => 0, "Tags" => $tags, "Description" => $description, "Match_id" => "");
+			$db->Lost->insert($document);
+		}
+		$output = "You have successfully added an item";
+		$app->render('main.php', array('output' => $output));
+	}
+	else{
+		$output = "Update not sucessful.  :(";
+		$app->render('main.php', array('output' => $output));
+	}
 	
+});
+
+$app->get('/login', function() use($app){
+	$app->render('login.php');
 });
 
 $app->run();
