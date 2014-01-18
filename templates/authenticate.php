@@ -3,7 +3,7 @@
 	
 	$documentRoot = $_SERVER['DOCUMENT_ROOT'];
 	//Connect to the database
-	if($documentRoot == "/var/www/"){
+	if($documentRoot == "/var/www"){
 		$openid = new LightOpenID('localhost');
 	}
 	else{
