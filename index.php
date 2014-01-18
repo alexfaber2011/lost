@@ -1,4 +1,5 @@
 <?php
+echo "hello";
 /**
  * Step 1: Require the Slim Framework
  *
@@ -27,6 +28,7 @@ $app = new \Slim\Slim(array(
     'log.path' => './logs',
     'log.level' => 4,
 ));
+
 
 /**
  * Step 3: Define the Slim application routes
