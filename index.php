@@ -61,6 +61,7 @@ $db = $connection->LF;
 
 // GET route
 $app->get('/', function() use ($app, $db){
+	echo "get";
 	$header = "<h1>Welcome</h1>";
 	$output = "Hello, welcome to lost and found.  Refer to the left panel to begin.";
 	$app->render('main.php', array('header' => $header, 'output' => $output));
