@@ -92,8 +92,9 @@ h2{
 }
 
 #left-panel{
-  position: relative;
-  float: left;
+  position: fixed;
+  top: 0px;
+  left: 0px;
   width: 25%;
   height: 100%;
   bottom: 0px;
@@ -120,6 +121,7 @@ h2{
   position: relative;
   width: 75%;
   float: left;
+  margin-left: 25%;
 }
 
 #header{

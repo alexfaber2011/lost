@@ -14,7 +14,15 @@
 	</head>
 	<body>
 		<div id="left-panel">
-				<a href="/lost"><div class="menu-item"><?php if(isset($_SESSION['first-name'])){echo $_SESSION['first-name'];}else{echo "NAME";} ?></div></a>
+				<?php
+					if($_SERVER['DOCUMENT_ROOT'] == "/var/www/"){
+						$location = "/lost";
+					}
+					else{
+						$location = "/";
+					}
+				?>
+				<a href="<?php echo $location ?>"><div class="menu-item"><?php if(isset($_SESSION['first-name'])){echo $_SESSION['first-name'];}else{echo "NAME";} ?></div></a>
 				<a href="report-found"><div class="menu-item">Report Found</div></a>
 				<a href="report-lost"><div class="menu-item">Report Lost</div></a>
 				<a href="my-items"><div class="menu-item">My Items</div></a>

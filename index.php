@@ -38,6 +38,19 @@ $app = new \Slim\Slim(array(
  * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
  * is an anonymous function.
  */
+ 
+ 
+//REQUIRE DWOLLA 
+require 'includes/dwolla-php-master/lib/dwolla.php';
+$apiKey = 'Jwj1SCxTtuUl4TgqwwkCZMZr0Olqm1k7aJ+TGpZSx25YYMxH78';
+$apiSecret = 'Cf7XFcqol/86YGd1DC8GbEcsySgWiCFt/n499zULopwa5FezC9';
+$redirectUri = 'http://secret-cove-9044.herokuapp.com/dwolla';
+
+$permissions = array("Send");
+$Dwolla = new DwollaRestClient($apiKey, $apiSecret, $redirectUri, $permissions);
+
+ 
+ 
 $retry = 3;
 function getMongoClient() {
     try {
@@ -286,5 +299,47 @@ $app->get('/logout', function() use($app){
 	}
 });
 
+$app->get('/thank-you', function() use($app){
+	$header = "<h1>Thank You</h1>";
+	$output = "You're user has been paid.";
+	$app->render('main.php', array('header' => $header, 'output' => $output));
+});
+
+$app->get('/dwolla', function() use($app, $Dwolla){
+	/**
+	 * STEP 1: 
+	 *   Create an authentication URL
+	 *   that the user will be redirected to
+	 **/
+	
+	
+	if(!isset($_GET['code']) && !isset($_GET['error'])) {
+	        $authUrl = $Dwolla->getAuthUrl();
+	        header("Location: {$authUrl}");
+			exit();
+	}
+	
+	/**
+	 * STEP 2:
+	 *   Exchange the temporary code given
+	 *   to us in the querystring, for
+	 *   a never-expiring OAuth access token
+	 **/
+	if(isset($_GET['error'])) {
+	        echo "There was an error. Dwolla said: {$_GET['error_description']}";
+	}
+	
+	else if(isset($_GET['code'])) {
+	        $code = $_GET['code'];
+	
+	        $token = $Dwolla->requestToken($code);
+	        if(!$token) { $Dwolla->getError(); } // Check for errors
+	        else {
+	                session_start();
+	                $_SESSION['token'] = $token;
+	                echo "Your access token is: {$token}";
+	        } // Print the access token
+	}
+});
 $app->run();
 ?>
