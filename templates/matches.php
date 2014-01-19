@@ -1,5 +1,6 @@
 <?php include('header.php'); ?>
 <?php
+	session_start();
 	$email = $_SESSION['email'];
 	$go = false;
 	if(isset($email)){
@@ -50,12 +51,12 @@
 													</table>
 												</div>
 												<div class="their-item-container">
-													<form id="reject" action="" methed="post">
+													<form id="reject" action="" method="post">
 														<input type="hidden" name="Reject" value="<?php echo $found_id ?>" />
 														<input type="hidden" name="Lost" value="<?php echo $doc["_id"] ?>" />
 														<input type="submit" id="reject" value="NO" />
 													</form>
-													<form id="accept" action="http://mysterious-stream-6921.herokuapp.com/" methed="post">
+													<form id="accept" action="http://mysterious-stream-6921.herokuapp.com/" method="post">
 														<input type="hidden" name="Accept" value="<?php echo $found_id ?>" />
 														<input type="hidden" name="Lost" value="<?php echo $doc["_id"] ?>" />
 														<input type="submit" id="accept" value="YES" />

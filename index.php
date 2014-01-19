@@ -52,12 +52,12 @@ function getMongoClient() {
     throw new Exception("I've tried several times getting MongoClient.. Is mongod really running?");
 }
 
-function trigger_kyle($array){
+function trigger_kyle($array, $url){
 	$curl = curl_init();
 	// Set some options - we are passing in a useragent too here
 	curl_setopt_array($curl, array(
 	    CURLOPT_RETURNTRANSFER => 1,
-	    CURLOPT_URL => 'http://mysterious-stream-6921.herokuapp.com/run',
+	    CURLOPT_URL => 'http://mysterious-stream-6921.herokuapp.com/' . $url,
 	    //CURLOPT_USERAGENT => 'Codular Sample cURL Request',
 	    CURLOPT_POST => 1,
 	    CURLOPT_POSTFIELDS => $array
@@ -67,6 +67,7 @@ function trigger_kyle($array){
 	
 	// Close request to clear up some resources
 	curl_close($curl);
+	return $resp;
 }
 
 //Connect to Mongo database
@@ -127,7 +128,7 @@ $app->post('/report', function () use ($app, $db){
 			$db->Lost->insert($document);
 		}
 		$output = "You have successfully added an item";
-		trigger_kyle(array(run => true,));
+		trigger_kyle(array(run => true,), "run");
 		$app->render('main.php', array('output' => $output));
 	}
 	else{
@@ -193,7 +194,7 @@ $app->get('/my-items', function() use($app, $db){
 });
 
 
-$app->get('/matches/', function() use($app, $db){
+$app->get('/matches', function() use($app, $db){
 	session_start();
 	$email = $_SESSION['email'];
 	$name = $_SESSION['first-name'];
@@ -202,15 +203,27 @@ $app->get('/matches/', function() use($app, $db){
 	
 });
 
-$app->post('/matches/', function() use($app, $db){
-	$reject_id = $_POST['Reject'];
-	$lost_id = $_POST['Lost'];
-	//array(run => true,)
+$app->post('/matches', function() use($app, $db){
 	//Reject: OpenID of rejected object
 	//Lost: OpenID of lost object
+	$reject_id = $_POST['Reject'];
+	
+	
+	//Lost: OpenId of lost object
+	//Found; OpenId of found object
+	//$found_id = $_POST[]
+	
+	$lost_id = $_POST['Lost'];
+	
 	if(isset($reject_id) && isset($lost_id)){
-		trigger_kyle(array(Reject => $reject_id, Lost => $lost_id));
+		$continue = trigger_kyle(array(Reject => $reject_id, Lost => $lost_id), "no");
+		if($continue != null){
+			$app->render('matches.php');
+		}
 	}
+	// if(isset($reject_id) && isset($lost_id)){
+		// trigger_kyle(array(Reject => $reject_id, Lost => $lost_id));
+	// }
 });
 
 $app->run();
