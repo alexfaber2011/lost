@@ -121,7 +121,7 @@ $app->post('/report', function () use ($app, $db){
 	}
 	if($can_update && isset($email)){
 		$date = date('M d, Y - H:i a');
-		$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "Matched" => 0, "Tags" => $tags, "Description" => $description, "email" => $email);
+		$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "Matched" => 0, "Tags" => $tags, "Description" => $description, "email" => $email, "PMatched_id" => array(), "Rejects" => array());
 		if($isFound){
 			$db->Found->insert($document);
 		}else{
