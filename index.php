@@ -200,7 +200,6 @@ $app->get('/matches', function() use($app, $db){
 	$name = $_SESSION['first-name'];
 	
 	$app->render('matches.php', array('name' => $name, 'db' => $db));
-	
 });
 
 $app->post('/matches', function() use($app, $db){
@@ -211,7 +210,7 @@ $app->post('/matches', function() use($app, $db){
 	
 	//Lost: OpenId of lost object
 	//Found; OpenId of found object
-	$found_id = $_POST[];
+	$found_id = $_POST['Found'];
 	
 	$lost_id = $_POST['Lost'];
 	
@@ -227,6 +226,14 @@ $app->post('/matches', function() use($app, $db){
 			$app->render('matches.php');
 		}
 	}
+});
+
+$app->get('/matched', function() use($app, $db){
+	session_start();
+	$email = $_SESSION['email'];
+	$name = $_SESSION['first-name'];
+	
+	$app->render('matched.php', array('name' => $name, 'db' => $db));
 });
 
 $app->run();

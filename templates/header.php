@@ -19,6 +19,7 @@
 				<a href="report-lost"><div class="menu-item">Report Lost</div></a>
 				<a href="my-items"><div class="menu-item">My Items</div></a>
 				<a href="matches"><div class="menu-item">Matches</div></a>
+				<a href="matched"><div class="menu-item">Matched</div></a>
 		</div>
 		<div id="right">
 			<div id="header">

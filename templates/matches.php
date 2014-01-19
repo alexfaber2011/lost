@@ -57,7 +57,7 @@
 														<input type="submit" id="reject" value="NO" />
 													</form>
 													<form id="accept" action="" method="post">
-														<input type="hidden" name="Accept" value="<?php echo $found_id ?>" />
+														<input type="hidden" name="Found" value="<?php echo $found_id ?>" />
 														<input type="hidden" name="Lost" value="<?php echo $doc["_id"] ?>" />
 														<input type="submit" id="accept" value="YES" />
 													</form>
