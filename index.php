@@ -121,7 +121,7 @@ $app->post('/report', function () use ($app, $db){
 	}
 	if($can_update && isset($email)){
 		$date = date('M d, Y - H:i a');
-		$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "Matched" => 0, "Tags" => $tags, "Description" => $description, "email" => $email, "PMatched_id" => array(), "Rejects" => array());
+		$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "Matched" => 0, "Tags" => $tags, "Description" => $description, "email" => $email, "PMatch_id" => array(), "Rejects" => array());
 		if($isFound){
 			$db->Found->insert($document);
 		}else{
@@ -211,7 +211,7 @@ $app->post('/matches', function() use($app, $db){
 	
 	//Lost: OpenId of lost object
 	//Found; OpenId of found object
-	//$found_id = $_POST[]
+	$found_id = $_POST[];
 	
 	$lost_id = $_POST['Lost'];
 	
@@ -221,9 +221,12 @@ $app->post('/matches', function() use($app, $db){
 			$app->render('matches.php');
 		}
 	}
-	// if(isset($reject_id) && isset($lost_id)){
-		// trigger_kyle(array(Reject => $reject_id, Lost => $lost_id));
-	// }
+	if(isset($lost_id) && isset($found_id)){
+		$continue = trigger_kyle(array(Found => $found_id, Lost => $lost_id), "yes");
+		if($continue != null){
+			$app->render('matches.php');
+		}
+	}
 });
 
 $app->run();
