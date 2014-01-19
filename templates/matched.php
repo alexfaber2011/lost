@@ -9,7 +9,7 @@
 ?>
 			<div id="content">
 				<div class="padding">
-					<h1><?php echo $name ?>'s Matches</h1>
+					<h1><?php echo $name ?>'s Matched Items</h1>
 					<?php
 						if($go){
 							$query = array("email" => $email); 

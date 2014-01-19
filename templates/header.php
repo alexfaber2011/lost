@@ -20,6 +20,7 @@
 				<a href="my-items"><div class="menu-item">My Items</div></a>
 				<a href="matches"><div class="menu-item">Matches</div></a>
 				<a href="matched"><div class="menu-item">Matched</div></a>
+				<a href="logout"><div class="menu-item">Logout</div></a>
 		</div>
 		<div id="right">
 			<div id="header">

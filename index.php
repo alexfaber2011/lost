@@ -77,10 +77,17 @@ $db = $connection->LF;
 
 // GET route
 $app->get('/', function() use ($app, $db){
-	$header = "<h1>Welcome</h1>";
-	$output = "Hello, welcome to lost and found.  Refer to the left panel to begin.";
-	$app->render('main.php', array('header' => $header, 'output' => $output));
+	session_start();
+	$email = $_SESSION['email'];
+	$name = $_SESSION['first-name'];
 	
+	if(isset($email)){
+		$header = "<h1>Welcome</h1>";
+		$output = "Hello, welcome to lost and found.  Refer to the left panel to begin.";
+		$app->render('main.php', array('header' => $header, 'output' => $output));
+	}else{
+		$app->redirect("login");
+	}
 });
 
 $app->get('/report-lost', function () use ($app){
@@ -234,6 +241,43 @@ $app->get('/matched', function() use($app, $db){
 	$name = $_SESSION['first-name'];
 	
 	$app->render('matched.php', array('name' => $name, 'db' => $db));
+});
+
+$app->get('/pay', function() use($app, $db){
+	session_start();
+	$email = $_SESSION['email'];
+	$name = $_SESSION['first-name'];
+	
+	
+});
+
+$app->get('/logout', function() use($app){
+	// Initialize the session.
+	// If you are using session_name("something"), don't forget it now!
+	session_start();
+	
+	// Unset all of the session variables.
+	$_SESSION = array();
+	$_SESSION['email'] = null;
+	
+	// If it's desired to kill the session, also delete the session cookie.
+	// Note: This will destroy the session, and not just the session data!
+	if (ini_get("session.use_cookies")) {
+	    $params = session_get_cookie_params();
+	    setcookie(session_name(), '', time() - 42000,
+	        $params["path"], $params["domain"],
+	        $params["secure"], $params["httponly"]
+	    );
+	}
+	
+	// Finally, destroy the session.
+	session_destroy();
+	echo $_SERVER['DOCUMENT_ROOT'];
+	if($_SERVER['DOCUMENT_ROOT'] == "/var/www/"){
+		$app->redirect("/lost");
+	}else{
+		$app->redirect("/");
+	}
 });
 
 $app->run();
