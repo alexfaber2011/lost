@@ -48,7 +48,7 @@ $redirectUri = 'http://secret-cove-9044.herokuapp.com/dwolla';
 
 $permissions = array("Send");
 $Dwolla = new DwollaRestClient($apiKey, $apiSecret, $redirectUri, $permissions);
-$Dwolla->setToken('zSggby3upj7RC+lcYBtzofiL5Q4=');
+$Dwolla->setToken('z/ygp368vra/kIIIuVl+Pmxv2pQ= ');
 
  
  
@@ -307,8 +307,11 @@ $app->get('/thank-you', function() use($app){
 });
 
 $app->get('/dwolla', function() use($app, $Dwolla){
+	echo "pre-poop";
 	$id = $Dwolla->send('9999', '812-101-0468', 1.00);
 	echo $id;
+	echo $Dwolla->getError();
+	echo "poop";
 	/**
 	 * STEP 1: 
 	 *   Create an authentication URL

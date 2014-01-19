@@ -10,7 +10,7 @@
 	<body>
 		<div id="login-box">
 			<div class="padding">
-				<h1>LOST &amp; FOUND</h1>
+				<img src="img/landfsmall.png">
 				<form action="login" method="get">
 					<input type="hidden" name="request" value="login" />
 					<input class="login-button" type="submit" value="login / sign-up" />
