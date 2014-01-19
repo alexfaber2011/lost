@@ -18,6 +18,7 @@
 					?>
 						<?php if(isset($cursor)) : ?>
 								<?php foreach ($cursor as $doc): ?>
+										<?php if($doc['Matched'] == 1): ?>
 									<!-- <div class="match-container"> -->
 												<div class="your-item-container match">
 													<h1><?php echo $doc['Item']; ?></h1>
@@ -53,6 +54,7 @@
 														  data-type="simple"
 													></script>
 												</div>
+												<?php endif ?>
 										<!-- </div> -->
 								<?php endforeach ?>
 								<?php endif ?>

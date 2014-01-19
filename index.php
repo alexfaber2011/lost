@@ -105,7 +105,7 @@ $app->get('/', function() use ($app, $db){
 });
 
 $app->get('/report-lost', function () use ($app){
-	$app->render('insert.php');
+	$app->render('insert.php', array('output' => "Lost"));
 });
 
 $app->get('/report-found', function () use ($app){
