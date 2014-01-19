@@ -129,6 +129,14 @@ h2{
   width: 100%;
   min-height: 50px;
   font-size: 2em;
+  text-align: center;
+  
+  img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
   .padding{
     background-color: $menu-color;

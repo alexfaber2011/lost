@@ -32,7 +32,6 @@
 		</div>
 		<div id="right">
 			<div id="header">
-				<div class="padding">
-					L&amp;F
-				</div>
+				<img src="img/landfsmall.png" />
 			</div>
+				
