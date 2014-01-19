@@ -54,10 +54,14 @@ table {
 //----------              My styling                                ----------//
 $light-grey: #bdb1b1;
 $light-grey-highlights: #807676;
-$font-color: #4b4648;
+$font-color: #e5e5e5;
 $menu-color: rgba(201,201,201,.5);
 $main-color: rgba(201,201,201,.9);
-$tag-color: #252538;
+$tag-color: #bdb1b1;
+$dark-blue: #0e0f29;
+$background-blue: #535A6A;
+$dark-grey: rgba(67,68,70,1);
+$font: #e5e5e5;
 
 html{
   position: relative;
@@ -98,6 +102,21 @@ h2{
   width: 25%;
   height: 100%;
   bottom: 0px;
+  min-width: 255px;
+  
+  #bar{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(67,68,70,1);
+    box-shadow: 0px 0px 5px black;
+    
+    img{
+      position: relative;
+      margin-left: 5px;
+      margin-top: 5px;
+    }
+  }
   
   .menu-item{
     position: relative;
@@ -107,19 +126,27 @@ h2{
     text-align: center;
     line-height: 50px;
     font-size: 1em;
-    background-color: $menu-color;
-    color: white;
-    margin-bottom: 5px;
+    color: #e5e5e5;
+    padding-bottom: 5px;
+    text-shadow: 0px 2px 2px black;
+    border-bottom: 1px solid $dark-blue;
    
     &:hover{
-      background-color: $main-color;
+      text-shadow: 0px 2px 2px $dark-blue;
+      background-color: rgba(255,255,255,.1);
     }
+  }
+  
+  #name{
+    margin-top: 50px;
+    border: none;
   }
 }
 
 #right{
   position: relative;
   width: 75%;
+  min-width: 815px;
   float: left;
   margin-left: 25%;
 }
@@ -137,7 +164,7 @@ h2{
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .padding{
     background-color: $menu-color;
     margin-left: 5px;
@@ -150,12 +177,50 @@ h2{
   width: 100%;
   min-height: 500px;
   overflow: hidden;
+  text-shadow: 0px 0px 2px black;
   
   .padding{
     position: relative;
-    background-color: $main-color;
+    background-color: $dark-grey;
     margin-left: 5px;
     overflow: hidden;
+    margin-right: 5%;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+  }
+  
+  form.center-form{
+    position: relative;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2em;
+    
+    input{
+      background: none;
+      border: 1px solid $font-color;
+      border-radius: 3px;
+      width: 75%;
+      position: relative;
+      float: right;
+      color: $font-color;
+      padding: 3px;
+      font-weight: bold; 
+    }
+    
+    #submit{
+      color: $font-color;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      box-shadow: 0px 0px 5px black;
+      
+      &:hover{
+        background-color: $menu-color;
+      }
+    }
   }
 }
 
@@ -213,12 +278,14 @@ h2{
 .item-container{
   position: relative;
   overflow: hidden;
-  width: 100%;
   margin-bottom: 50px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .item{
-  margin-right: 10px;
+  margin-right: 5%;
   margin-top: 10px;
   border-radius: 10px;
   position: relative;
@@ -226,25 +293,39 @@ h2{
   float: left;
   min-height: 100px;
   
-  .padding{
+  .padding-item{
     min-height: 100px;
+    border: 1px solid $font-color;
+    padding: 20px;
+    border-radius: 10px;
   }
   
   h1{
     font-size: 1em;
     font-weight: bold;
+    line-height: 1.3em;
   }
   
   p{
     font-size: .8em;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: $menu-color;
   }
-  // span.tag{
-    // padding: 5px;
-    // border-radius: 5px;
-    // background-color: white;
-  // }
+  
+  p.description{
+      font-style: italic;
+      background-color: rgba(0,0,0,0);
+  }
 }
 
+
+.match{
+  position: relative;
+  float: left;
+  margin-left: 15px;
+  margin-top: 15px;
+}
 .match-container{
   position: relative;
   width: 100%;
@@ -263,14 +344,16 @@ h2{
     width: 20%;
     margin-left: -10%;
     height: 1px;
-    border-bottom: 4px solid $font-color;
+    border-bottom: 1px solid $font-color;
   }
+}
   
   .your-item-container, .their-item-container{
     position: relative;
     min-height: 100px;
     width: 40%;
-    background-color: $main-color;
+    background-color: none;
+    border: 1px solid $font-color;
     border-radius: 10px;
     
     h1{
@@ -370,4 +453,3 @@ h2{
       }
     }
   }
-}
