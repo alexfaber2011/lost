@@ -146,7 +146,7 @@ class DwollaRestClient
             $params['redirect_uri'] = $this->redirectUri;
         }
 
-        $url = 'https://www.dwolla.com/oauth/v2/authenticate?' . http_build_query($params);
+        $url = 'https://uat.dwolla.com/oauth/rest/users/gordon@dwolla.com?' . http_build_query($params);
 
         return $url;
     }
