@@ -17,8 +17,8 @@
 					?>
 						<?php if(isset($cursor)) : ?>
 								<?php foreach ($cursor as $doc): ?>
-									<div class="match-container">
-												<div class="your-item-container">
+									<!-- <div class="match-container"> -->
+												<div class="your-item-container match">
 													<h1><?php echo $doc['Item']; ?></h1>
 													<table>
 														<tr>
@@ -52,7 +52,7 @@
 														  data-type="simple"
 													></script>
 												</div>
-										</div>
+										<!-- </div> -->
 								<?php endforeach ?>
 								<?php endif ?>
 								<?php

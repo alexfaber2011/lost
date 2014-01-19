@@ -2,18 +2,15 @@
 
 			<div id="content">
 				<div class="padding">
-					<h1><?php echo $header ?></h1>
 					<?php if(isset($email)): ?>
-					<br />
-					<hr />
 					<div class="item-container">
 					<h2><?php echo $name ?>'s Lost Items</h2>
 					<?php foreach ($lost_cursor as $doc): ?>
 						<div class="item">
-							<div class="padding">
-								<h1><?php echo $doc['Item'] ?> - <?php echo $doc['Location'] ?> - <?php echo $doc['Date Created'] ?></h1>
+							<div class="padding-item">
+								<h1><?php echo $doc['Item'] ?> - <?php echo $doc['Location'] ?> <br /> <?php echo $doc['Date Created'] ?></h1>
 								<hr />
-								<p>
+								<p class="description">
 									<?php echo $doc['Description']; ?>
 								</p>
 								<hr />
@@ -30,10 +27,10 @@
 					<h2><?php echo $name ?>'s Found Items</h2>
 					<?php foreach ($found_cursor as $doc): ?>
 						<div class="item">
-							<div class="padding">
+							<div class="padding-item">
 								<h1><?php echo $doc['Item'] ?> - <?php echo $doc['Location'] ?> - <?php echo $doc['Date Created'] ?></h1>
 								<hr />
-								<p>
+								<p class="description">
 									<?php echo $doc['Description']; ?>
 								</p>
 								<hr />

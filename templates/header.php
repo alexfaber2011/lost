@@ -22,17 +22,17 @@
 						$location = "/";
 					}
 				?>
-				<a href="<?php echo $location ?>"><div class="menu-item"><?php if(isset($_SESSION['first-name'])){echo $_SESSION['first-name'];}else{echo "NAME";} ?></div></a>
-				<a href="report-found"><div class="menu-item">Report Found</div></a>
-				<a href="report-lost"><div class="menu-item">Report Lost</div></a>
-				<a href="my-items"><div class="menu-item">My Items</div></a>
-				<a href="matches"><div class="menu-item">Matches</div></a>
-				<a href="matched"><div class="menu-item">Matched</div></a>
-				<a href="logout"><div class="menu-item">Logout</div></a>
+				
+				
+				<div id="bar">
+					<a href="<?php echo $location ?>"><img src="img/landfsmall.png" /></a>
+					<a href="report-found"><div class="menu-item">Report Found</div></a>
+					<a href="report-lost"><div class="menu-item">Report Lost</div></a>
+					<a href="my-items"><div class="menu-item">My Items</div></a>
+					<a href="matches"><div class="menu-item">Matches</div></a>
+					<a href="matched"><div class="menu-item">Matched</div></a>
+					<a href="logout"><div class="menu-item">Logout</div></a>
+					<a href="<?php echo $location ?>"><div id="name" class="menu-item">User: <?php if(isset($_SESSION['first-name'])){echo $_SESSION['first-name'];}else{echo "NAME";} ?></div></a>
+				</div>
 		</div>
 		<div id="right">
-			<div id="header">
-				<div class="padding">
-					L&amp;F
-				</div>
-			</div>
