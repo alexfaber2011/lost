@@ -48,6 +48,7 @@ $redirectUri = 'http://secret-cove-9044.herokuapp.com/dwolla';
 
 $permissions = array("Send");
 $Dwolla = new DwollaRestClient($apiKey, $apiSecret, $redirectUri, $permissions);
+$Dwolla->setToken('zSggby3upj7RC+lcYBtzofiL5Q4=');
 
  
  
@@ -306,6 +307,8 @@ $app->get('/thank-you', function() use($app){
 });
 
 $app->get('/dwolla', function() use($app, $Dwolla){
+	$id = $Dwolla->send('9999', '812-101-0468', 1.00);
+	echo $id;
 	/**
 	 * STEP 1: 
 	 *   Create an authentication URL
@@ -313,11 +316,11 @@ $app->get('/dwolla', function() use($app, $Dwolla){
 	 **/
 	
 	
-	if(!isset($_GET['code']) && !isset($_GET['error'])) {
-	        $authUrl = $Dwolla->getAuthUrl();
-	        header("Location: {$authUrl}");
-			exit();
-	}
+	// if(!isset($_GET['code']) && !isset($_GET['error'])) {
+	        // $authUrl = $Dwolla->getAuthUrl();
+	        // header("Location: {$authUrl}");
+			// exit();
+	// }
 	
 	/**
 	 * STEP 2:
@@ -325,21 +328,21 @@ $app->get('/dwolla', function() use($app, $Dwolla){
 	 *   to us in the querystring, for
 	 *   a never-expiring OAuth access token
 	 **/
-	if(isset($_GET['error'])) {
-	        echo "There was an error. Dwolla said: {$_GET['error_description']}";
-	}
-	
-	else if(isset($_GET['code'])) {
-	        $code = $_GET['code'];
-	
-	        $token = $Dwolla->requestToken($code);
-	        if(!$token) { $Dwolla->getError(); } // Check for errors
-	        else {
-	                session_start();
-	                $_SESSION['token'] = $token;
-	                echo "Your access token is: {$token}";
-	        } // Print the access token
-	}
+	// if(isset($_GET['error'])) {
+	        // echo "There was an error. Dwolla said: {$_GET['error_description']}";
+	// }
+// 	
+	// else if(isset($_GET['code'])) {
+	        // $code = $_GET['code'];
+// 	
+	        // $token = $Dwolla->requestToken($code);
+	        // if(!$token) { $Dwolla->getError(); } // Check for errors
+	        // else {
+	                // session_start();
+	                // $_SESSION['token'] = $token;
+	                // echo "Your access token is: {$token}";
+	        // } // Print the access token
+	// }
 });
 $app->run();
 ?>
