@@ -60,7 +60,7 @@ $main-color: rgba(201,201,201,.9);
 $tag-color: #bdb1b1;
 $dark-blue: #0e0f29;
 $background-blue: #535A6A;
-$dark-grey: rgba(67,68,70,1);
+$dark-grey: rgba(67,68,70,.5);
 $font: #e5e5e5;
 
 html{
@@ -75,7 +75,7 @@ body{
   height: 100%;
 
   
-  background: url(img/rain.jpg) no-repeat center center fixed; 
+  background: url(img/wood.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -195,8 +195,11 @@ h2{
     width: 50%;
     display: block;
     margin-left: auto;
+    margin-top: 100px;
     margin-right: auto;
+    margin-bottom: 100px;
     line-height: 2em;
+    text-align: right;
     
     input{
       background: none;
@@ -208,6 +211,7 @@ h2{
       color: $font-color;
       padding: 3px;
       font-weight: bold; 
+      margin-left: 15px;
     }
     
     #submit{
@@ -238,7 +242,7 @@ h2{
   margin-left: -300px;
   border: 1px solid $main-color;
   color: $main-color;
-  background-color: rgba(59,64,83,.5);
+  background-color: rgba(44,44,44,.7);
   
   .padding{
     padding: 50px;

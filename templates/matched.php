@@ -2,6 +2,7 @@
 <?php
 	session_start();
 	$email = $_SESSION['email'];
+	$name = $_SESSION['first-name'];
 	$go = false;
 	if(isset($email)){
 		$go = true;
