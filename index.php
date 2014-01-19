@@ -117,7 +117,6 @@ $app->post('/report', function () use ($app, $db){
 							$isFound = true;
 						}
 						$can_update = true;
-						trigger_kyle();
 					}
 				}
 			}
@@ -131,6 +130,7 @@ $app->post('/report', function () use ($app, $db){
 			$db->Lost->insert($document);
 		}
 		$output = "You have successfully added an item";
+		trigger_kyle();
 		$app->render('main.php', array('output' => $output));
 	}
 	else{
