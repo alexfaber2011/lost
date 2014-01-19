@@ -210,6 +210,10 @@ $app->get('/matches', function() use($app, $db){
 });
 
 $app->post('/matches', function() use($app, $db){
+	session_start();
+	$email = $_SESSION['email'];
+	$name = $_SESSION['first-name'];	
+		
 	//Reject: OpenID of rejected object
 	//Lost: OpenID of lost object
 	$reject_id = $_POST['Reject'];
@@ -224,13 +228,15 @@ $app->post('/matches', function() use($app, $db){
 	if(isset($reject_id) && isset($lost_id)){
 		$continue = trigger_kyle(array(Reject => $reject_id, Lost => $lost_id), "no");
 		if($continue != null){
-			$app->render('matches.php');
+			sleep(5);
+			$app->render('matches.php', array("db" => $db, 'name' => $name));
 		}
 	}
 	if(isset($lost_id) && isset($found_id)){
 		$continue = trigger_kyle(array(Found => $found_id, Lost => $lost_id), "yes");
 		if($continue != null){
-			$app->render('matches.php');
+			sleep(5);
+			$app->render('matched.php', array("db" => $db));
 		}
 	}
 });
@@ -248,7 +254,7 @@ $app->get('/pay', function() use($app, $db){
 	$email = $_SESSION['email'];
 	$name = $_SESSION['first-name'];
 	
-	
+	$app->render('pay.php');
 });
 
 $app->get('/logout', function() use($app){
