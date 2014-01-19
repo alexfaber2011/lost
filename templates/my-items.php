@@ -3,11 +3,7 @@
 			<div id="content">
 				<div class="padding">
 					<h1><?php echo $header ?></h1>
-					<form action="my-items" method="get">
-						Name: <input type="text" name="name"><br>
-						<input type="submit" />
-					</form>
-					<?php if(isset($name)): ?>
+					<?php if(isset($email)): ?>
 					<br />
 					<hr />
 					<div class="item-container">
