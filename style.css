@@ -202,17 +202,18 @@ h2 {
       color: #e5e5e5;
       text-align: center;
       position: relative;
-      width: 100%;
+      float: right;
+      width: 60%;
       box-shadow: 0px 0px 5px black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003225}}
       #content form.center-form #submit:hover {
         background-color: rgba(201, 201, 201, 0.5); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003232}}
 .padding {
   padding: 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003235}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003236}}
 #login-box {
   position: absolute;
   width: 600px;
@@ -224,21 +225,21 @@ h2 {
   border: 1px solid rgba(201, 201, 201, 0.9);
   color: rgba(201, 201, 201, 0.9);
   background-color: rgba(44, 44, 44, 0.7); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003248}}
   #login-box .padding {
     padding: 50px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003252}}
   #login-box h1 {
     font-size: 3em;
     font-weight: 100;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003258}}
   #login-box img {
     position: absolute;
     top: 20%;
     margin-left: -118px;
     left: 50%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003266}}
   #login-box .login-button {
     width: 300px;
     background: none;
@@ -250,17 +251,17 @@ h2 {
     top: 50%;
     padding: 10px;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003278}}
     #login-box .login-button:hover {
       background-color: rgba(201, 201, 201, 0.5); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003282}}
   #login-box #email {
     top: 65%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003286}}
   #login-box #sign-up {
     top: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003290}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003291}}
 .item-container {
   position: relative;
   overflow: hidden;
@@ -269,7 +270,7 @@ h2 {
   margin-right: auto;
   margin-left: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003300}}
 .item {
   margin-right: 5%;
   margin-top: 10px;
@@ -278,45 +279,45 @@ h2 {
   width: 300px;
   float: left;
   min-height: 100px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003308}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003309}}
   .item .padding-item {
     min-height: 100px;
     border: 1px solid #e5e5e5;
     padding: 20px;
     border-radius: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003316}}
   .item h1 {
     font-size: 1em;
     font-weight: bold;
     line-height: 1.3em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003322}}
   .item p {
     font-size: .8em;
     padding: 5px;
     border-radius: 3px;
     background-color: rgba(201, 201, 201, 0.5); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003329}}
   .item p.description {
     font-style: italic;
     background-color: rgba(0, 0, 0, 0); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003336}}
 .match {
   position: relative;
   float: left;
   margin-left: 15px;
   margin-top: 15px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003342}}
 .match-container {
   position: relative;
   width: 100%;
   margin-bottom: 10px;
   overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003348}}
   .match-container .padding {
     padding: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003352}}
   .match-container .arrow {
     position: absolute;
     left: 50%;
@@ -326,7 +327,7 @@ h2 {
     height: 1px;
     border-bottom: 1px solid #e5e5e5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003364}}
 .your-item-container, .their-item-container {
   position: relative;
   min-height: 100px;
@@ -334,79 +335,79 @@ h2 {
   background-color: none;
   border: 1px solid #e5e5e5;
   border-radius: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003372}}
   .your-item-container h1, .their-item-container h1 {
     margin: 10px;
     margin-left: 20px;
     font-size: 1.3em;
     text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003379}}
   .your-item-container table, .their-item-container table {
     position: relative;
     margin: 10px;
     font-size: 0.8em;
     width: 90%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003386}}
     .your-item-container table tr td, .their-item-container table tr td {
       padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003389}}
       .your-item-container table tr td:first-child, .their-item-container table tr td:first-child {
         width: 30%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003394}}
     .your-item-container table tr td.description, .their-item-container table tr td.description {
       font-style: italic; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003398}}
     .your-item-container table tr td.tags, .their-item-container table tr td.tags {
       color: #bdb1b1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003403}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003404}}
   .your-item-container .padding, .their-item-container .padding {
     position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003410}}
   .your-item-container span.date, .your-item-container span.item, .your-item-container span.date, .their-item-container span.date, .their-item-container span.item, .their-item-container span.date {
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003414}}
   .your-item-container span.date, .their-item-container span.date {
     position: relative;
     float: left;
     width: 25%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003420}}
   .your-item-container span.item, .their-item-container span.item {
     position: relative;
     float: left;
     width: 50%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003425}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003426}}
   .your-item-container span.date, .their-item-container span.date {
     position: relative;
     float: left;
     width: 25%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003433}}
 .your-item-container {
   float: left; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003437}}
 .their-item-container {
   float: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003440}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003441}}
   .their-item-container form #reject {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 50px;
     height: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003448}}
     .their-item-container form #reject input#reject {
       position: absolute;
       right: 0px;
       top: 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003454}}
   .their-item-container form #accept {
     position: absolute;
     top: 35px;
     right: 10px;
     width: 50px;
     height: 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/lost\/style\.scss}line{font-family:\00003461}}
     .their-item-container form #accept input#accept {
       position: absolute;
       right: 0px;

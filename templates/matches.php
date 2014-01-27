@@ -34,7 +34,7 @@
 															</tr>
 															<tr>
 																<td>Location:</td>
-																<td><?php echo $doc['Location'] ?></td>
+																<td><?php echo $doc["location"]["coordinates"][1] . ", " . $doc["location"]["coordinates"][0]; ?></td>
 															</tr>
 															<tr>
 																<td class="description" colspan="2"><?php echo $doc['Description'] ?></td>
@@ -69,7 +69,8 @@
 															</tr>
 															<tr>
 																<td>Location:</td>
-																<td><?php echo $their_document['Location'] ?></td>
+						
+																<td><?php echo $their_document["location"]["coordinates"][1] . ", " . $their_document["location"]["coordinates"][0]; ?></td>
 															</tr>
 															<tr>
 																<td class="description" colspan="2"><?php echo $their_document['Description'] ?></td>

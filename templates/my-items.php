@@ -8,7 +8,7 @@
 					<?php foreach ($lost_cursor as $doc): ?>
 						<div class="item">
 							<div class="padding-item">
-								<h1><?php echo $doc['Item'] ?> - <?php echo $doc['Location'] ?> <br /> <?php echo $doc['Date Created'] ?></h1>
+								<h1><?php echo $doc['Item'] ?> - <?php echo $doc["location"]["coordinates"][1] . ", " . $doc["location"]["coordinates"][0]; ?> <br /> <?php echo $doc['Date Created'] ?></h1>
 								<hr />
 								<p class="description">
 									<?php echo $doc['Description']; ?>
@@ -28,7 +28,7 @@
 					<?php foreach ($found_cursor as $doc): ?>
 						<div class="item">
 							<div class="padding-item">
-								<h1><?php echo $doc['Item'] ?> - <?php echo $doc['Location'] ?> - <?php echo $doc['Date Created'] ?></h1>
+								<h1><?php echo $doc['Item'] ?> - <?php echo $doc["location"]["coordinates"][1] . ", " . $doc["location"]["coordinates"][0]; ?> - <?php echo $doc['Date Created'] ?></h1>
 								<hr />
 								<p class="description">
 									<?php echo $doc['Description']; ?>
