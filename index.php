@@ -55,7 +55,7 @@ $Dwolla->setToken('z/ygp368vra/kIIIuVl+Pmxv2pQ= ');
 $retry = 3;
 function getMongoClient() {
     try {
-        return new Mongo("mongodb://alexfaber:lost@linus.mongohq.com:10089/LF");
+        return new Mongo("mongodb://alexfaber:newpassword@linus.mongohq.com:10089/LF");
     } catch(Exception $e) {
         /* Log the exception so we can look into why mongod failed later */
         //logException($e);
