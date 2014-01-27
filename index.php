@@ -133,10 +133,10 @@ $app->post('/report', function () use ($app, $db){
 					
 					//var_dump(filter_var($email, FILTER_VALIDATE_EMAIL));
 					if(filter_has_var(INPUT_POST, "lat") && $_POST["lat"] != "" && filter_var($_POST["lat"], FILTER_VALIDATE_FLOAT)){
-						$lat = $_POST["lat"];
+						$lat = intval($_POST["lat"]);
 						
 						if(filter_has_var(INPUT_POST, "long") && $_POST["long"] != "" && filter_var($_POST["long"], FILTER_VALIDATE_FLOAT)){
-							$long = $_POST["long"];
+							$long =  intval($_POST["long"]);
 							
 							if(isset($_POST['found'])){
 								$isFound = true;
