@@ -130,25 +130,35 @@ $app->post('/report', function () use ($app, $db){
 					$tags = $_POST["tags"];
 					$tags = explode(',' , $tags);
 					
-					if(filter_has_var(INPUT_POST, "location") && $_POST["location"] != ""){
-						$location = $_POST["location"];
-						if(isset($_POST['found'])){
-							$isFound = true;
-						}
-						$can_update = true;
+					
+					//var_dump(filter_var($email, FILTER_VALIDATE_EMAIL));
+					if(filter_has_var(INPUT_POST, "lat") && $_POST["lat"] != "" && filter_var($_POST["lat"], FILTER_VALIDATE_FLOAT)){
+						$lat = $_POST["lat"];
+						
+						if(filter_has_var(INPUT_POST, "long") && $_POST["long"] != "" && filter_var($_POST["long"], FILTER_VALIDATE_FLOAT)){
+							$long = $_POST["long"];
+							
+							if(isset($_POST['found'])){
+								$isFound = true;
+							}
+							$can_update = true;
+						}	
 					}
 				}
 			}
 	}
 	if($can_update && isset($email)){
 		$date = date('M d, Y - H:i a');
-		$document = array("Date Created" => $date, "Item" => $item , "Location" =>  $location, "Matched" => 0, "Tags" => $tags, "Description" => $description, "email" => $email, "PMatch_id" => array(), "Rejects" => array());
+		$document = array("Description" => $description, "Date Created" => $date, "Item" => $item, "Matched" => 0, "PMatch_id" => array(), "Rejects" => array(), 
+			"Tags" => $tags, "email" => $email, "location" => array("type" => "Point", "coordinates" => array($long, $lat)));
 		if($isFound){
 			$db->Found->insert($document);
 		}else{
 			$db->Lost->insert($document);
+			$output = $db->lastError();
+			$output = $output["err"] . "<br /><br />";
 		}
-		$output = "You have successfully added an item";
+		$output .= "You have successfully added an item";
 		trigger_kyle(array(run => true,), "run");
 		$app->render('main.php', array('output' => $output));
 	}
